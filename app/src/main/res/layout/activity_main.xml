@@ -28,18 +28,25 @@
     <LinearLayout
         android:layout_width = "match_parent"
         android:layout_height = "wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="center">
         <button
-            android:id="@+id/edit_result_name"
+            android:id="@+id/but_init"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"/>
+            android:text = "초기화"/>
 
         <button
-            android:id="@+id/edit_result_count"
+            android:id="@+id/but_insert"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"/>
+            android:text = "입  력"/>
+
+        <button
+            android:id="@+id/but_select"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text = "조  회"/>
     </LinearLayout>
 
     <LinearLayout
