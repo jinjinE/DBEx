@@ -35,13 +35,21 @@ public class MainActivity extends AppCompatActivity {
         myDb = new MyDBHelper(this);
         //기존의 테이블이 존재하면 삭제하고 테이블을 새로 생성한다.
         butInit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sqlDb=myDb.getWritableDatabase();
+                myDb.onUpgrade(sqlDb,1,2);
+                sqlDb.close();
+            }
+        });
 
+        butInsert.setOnClickListener(new View.OnClickListener() {
 
+            // 진유진 나대지마. 서영이 불편해해
             @Override
             public void onClick(View view) {
                 sqlDb = myDb.getWritableDatabase();
-                String sql = "insert into idalTable values('"+editName.getText()+"', "+editCount.getText()+")";
-                myDb.onUpgrade(sqlDb,1,2);
+                String sql = "insert into idolTable values('"+editName.getText()+"', "+editCount.getText()+")";
                 sqlDb.execSQL(sql);
                 sqlDb.close();
                 Toast.makeText(MainActivity.this,"저장됨",Toast.LENGTH_LONG).show();
@@ -56,8 +64,13 @@ public class MainActivity extends AppCompatActivity {
                 String names = "Idol 이름"+"\r\n"+"==========="+"\r\n";
                 String counts = "Idol 인원수"+"\r\n"+"==========="+"\r\n";
                 while(cursor.moveToNext()){
-
+                    names += cursor.getString(0)+"\r\n";
+                    counts += cursor.getInt(1)+"\r\n";
                 }
+                editResultCount.setText(counts);
+                editResultName.setText(names);
+                cursor.close();
+                sqlDb.close();
             }
         });
     }
@@ -78,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         // 이미 idalTable이 존재한다면 기존의 테이블을 삭제하고 새로 테이블을 만들 때 호출
         @Override
         public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-            String sql = "drop table if exist idalTable";
+            String sql = "drop table if exists idolTable";
             sqLiteDatabase.execSQL(sql);
             onCreate(sqLiteDatabase);
         }

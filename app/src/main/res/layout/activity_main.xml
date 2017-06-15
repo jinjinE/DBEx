@@ -12,7 +12,7 @@
         android:layout_height = "wrap_content"
         android:orientation="horizontal">
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="그룹명 : "
@@ -31,7 +31,7 @@
         android:layout_height = "wrap_content"
         android:orientation="horizontal">
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="카운트 : "
@@ -50,19 +50,19 @@
         android:gravity="center">
         <Button
             android:id="@+id/but_init"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text = "초기화"/>
 
         <Button
             android:id="@+id/but_insert"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text = "입  력"/>
 
         <Button
             android:id="@+id/but_select"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text = "조  회"/>
     </LinearLayout>
