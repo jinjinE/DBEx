@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 sqlDb=myDb.getWritableDatabase();
+                String sql = "";
                 myDb.onUpgrade(sqlDb,1,2);
                 sqlDb.close();
             }
