@@ -62,9 +62,21 @@
 
         <Button
             android:id="@+id/but_select"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text = "조  회"/>
+
+        <Button
+            android:id="@+id/but_update"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text = "수  정"/>
+        <Button
+            android:id="@+id/but_delete"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text = "삭  제"/>
+
     </LinearLayout>
 
     <LinearLayout
@@ -75,7 +87,7 @@
         android:background="#3da1b7">
         <EditText
             android:id="@+id/edit_result_name"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="20dp"
             android:layout_weight="1"
@@ -83,7 +95,7 @@
 
         <EditText
             android:id="@+id/edit_result_count"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="20dp"
             android:layout_weight="1"
